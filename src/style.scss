@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img,
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.carousel {
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.view {
+  overflow: hidden;
+  padding: 30px 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.center {
+  margin: auto;
+  z-index: 10;
+}
+.slider {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.item-inner {
+  // border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  margin: 10px;
+}
+.item-center {
+  transform: scale(2);
+  z-index: 1;
+}
+.item-bg {
+  opacity: 0.5;
+}
+
+.controls {
+  margin-top: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: auto;
+
+  &_inner {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #ddd1ff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 20px;
+  }
+}
+.btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  & path {
+    transition: all 0.3s ease;
+  }
+}
+.btn[role="ArrowLeft"],
+.btn[role="ArrowRight"] {
+  & svg:hover {
+    path {
+      stroke: #fff;
+    }
+  }
+}
+.btn[role="random"] {
+  & svg:hover {
+    animation: rotate .3s linear 2 ;
+    g {
+      fill: #fff;
+    }
+  }
+}
+@keyframes rotate {
+  
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  75% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+  
+  
+  
+}
